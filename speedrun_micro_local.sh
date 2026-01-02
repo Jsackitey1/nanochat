@@ -10,6 +10,7 @@ mkdir -p $NANOCHAT_BASE_DIR
 
 # Install uv if needed
 command -v uv &> /dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
+source "$HOME/.local/bin/env"
 [ -d ".venv" ] || uv venv
 # Sync dependencies with cpu extra
 uv sync --extra cpu
