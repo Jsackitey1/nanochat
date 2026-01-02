@@ -18,21 +18,16 @@ This repo is a full-stack implementation of an LLM like ChatGPT in a single, cle
 3. **Show unit checks** and sanity checks (order of magnitude, direction of field, sign conventions).
 4. **Refuse to guess** when missing info and ask for the missing variable.
 
-### What you will train
+### What I will train
 
-You will train 2 models (simple but research-legit):
+I will train 2 models:
 
 * **Baseline**: nanochat as-is (after speedrun).
-* **E&M Tutor**: the same model, then instruction-fine-tuned on your custom E&M tutoring dataset.
+* **E&M Tutor**: the same model, then instruction-fine-tuned on my custom E&M tutoring dataset.
 
-Then you compare them.
+Then compare them.
 
 ---
-
-## Your dataset (the secret sauce)
-
-You do not need millions of examples. You need **high quality**.
-
 ### Format for each training example
 
 A single JSONL line like this:
@@ -53,14 +48,14 @@ Target: **200 to 800** high-quality examples.
 
 ---
 
-## Evaluation (so it counts as research)
+## Evaluation
 
-We use a small held-out test set (50 to 150 questions) and score:
+I will use a small held-out test set (50 to 150 questions) and score:
 
 1. **Final answer correctness**
-2. **Reasoning correctness** (equations and steps make sense)
+2. **Reasoning correctness** 
 3. **Unit correctness**
-4. **Hallucination rate** (makes up constants, wrong units, invents givens)
+4. **Hallucination rate** 
 
 ---
 
