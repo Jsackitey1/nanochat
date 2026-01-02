@@ -34,6 +34,8 @@ python -m nanochat.report reset
 # 3. Tokenizer (Train on small subset)
 echo "--- TRAIN TOKENIZER ---"
 python -m nanochat.dataset -n 1 # Download just 1 shard
+# Copy shard 0 to shard 1 so we have at least 2 shards (one for train, one for val)
+cp $NANOCHAT_BASE_DIR/base_data/shard_00000.parquet $NANOCHAT_BASE_DIR/base_data/shard_00001.parquet
 python -m scripts.tok_train --max_chars=50000000 # 50M chars
 python -m scripts.tok_eval
 
